@@ -1,0 +1,42 @@
+{
+    "name": "@andyrmitchell/store",
+    "version": "0.0.1",
+    "description": "",
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "default": "./dist/index.js"
+        }
+    },
+    "module": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "type": "module",
+    "files": [
+        "dist",
+        "README.MD",
+        "LICENSE"
+    ],
+    "publishConfig": {
+        "access": "public"
+    },
+    "scripts": {
+        "build_release": "npm run build_prepare && np",
+        "build": "tsup",
+        "pkglint": "./build/publint_pipeable.sh",
+        "build_prepare": "npm run build && npm run pkglint",
+        "prepublishOnly": "npm run build_prepare",
+        "test": "vitest",
+        "test:watch": "vitest --watch"
+    },
+    "author": "",
+    "license": "MIT",
+    "devDependencies": {
+        "@types/jest": "^29.5.12",
+        "tsup": "^8.0.1",
+        "typescript": "^5.3.3",
+        "vitest": "^1.6.0"
+    },
+    "dependencies": {
+        
+    }
+}
